@@ -1,7 +1,7 @@
 #include <iostream.h>
 
-short int aaaS, bbbS, cccS; // Переменные для передачи в ASM
-int result;                 // Переменная для результата
+unsigned char int aaaS, bbbS, cccS; // Переменные для передачи в ASM
+unsigned int result;                 // Переменная для результата
 
 extern "C" { void Lab1S(void); }
 
