@@ -1,11 +1,11 @@
 #include <iostream.h>
 
-unsigned char aaaS, bbbS, cccS; // Переменные для передачи в ASM
-unsigned int result;                 // Переменная для результата
+// unsigned int (16-bit в Borland C++)
+unsigned int aaaS, bbbS, cccS;
+unsigned int result;
 
 extern "C" { void Lab1S(void); }
 
-// (bbbS * cccS - 8 / aaaS) / (bbbS + 30)
 void F_ASM() {
     Lab1S();
     cout << "ASM result: " << result << endl;
@@ -13,7 +13,7 @@ void F_ASM() {
 
 void F_CPP() {
     cout << "CPP result: ";
-    if (aaaS == 0 || bbbS + 30 == 0) { // Проверка на деление на 0
+    if (aaaS == 0 || bbbS + 30 == 0) {
         cout << "Error (division by zero)" << endl;
         return;
     }
@@ -29,7 +29,7 @@ int main() {
     cout << "Enter c: ";
     cin >> cccS;
 
-    F_CPP();  // Вычисление на C++
-    F_ASM();  // Вычисление на ASM
+    F_CPP();
+    F_ASM();
     return 0;
 }
